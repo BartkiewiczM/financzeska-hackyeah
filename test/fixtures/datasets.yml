@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  institution: one
+  slug: MyString
+  downloads_count: 1
+  notes: MyText
+  license_condition_custom_description: MyText
+  archived_resources_files_url: MyString
+  url: MyString
+  title: MyString
+  image_url: MyString
+  modified: 2023-09-30 13:06:14
+  created: 2023-09-30 13:06:14
+  followed: false
+
+two:
+  institution: two
+  slug: MyString
+  downloads_count: 1
+  notes: MyText
+  license_condition_custom_description: MyText
+  archived_resources_files_url: MyString
+  url: MyString
+  title: MyString
+  image_url: MyString
+  modified: 2023-09-30 13:06:14
+  created: 2023-09-30 13:06:14
+  followed: false
