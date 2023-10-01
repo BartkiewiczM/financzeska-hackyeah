@@ -11,10 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_09_30_133621) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
-  create_table "datasets", force: :cascade do |t|
+  create_table "datasets", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "institution_id", null: false
     t.string "slug"
     t.integer "downloads_count"
@@ -33,7 +30,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_30_133621) do
     t.index ["institution_id"], name: "index_datasets_on_institution_id"
   end
 
-  create_table "institutions", force: :cascade do |t|
+  create_table "institutions", charset: "utf8mb3", force: :cascade do |t|
     t.string "slug"
     t.string "tel"
     t.text "notes"
@@ -60,7 +57,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_30_133621) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "messages", force: :cascade do |t|
+  create_table "messages", charset: "utf8mb3", force: :cascade do |t|
     t.text "content"
     t.boolean "from_user"
     t.datetime "created_at", null: false

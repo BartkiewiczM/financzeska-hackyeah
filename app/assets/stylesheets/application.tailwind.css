@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+@keyframes typing {
+  0% { content: ''; }
+  33% { content: '.'; }
+  66% { content: '..'; }
+  100% { content: '...'; }
+}
+
+.typing-indicator span::after {
+  content: '';
+  display: inline-block;
+  animation: typing 1s steps(3, end) infinite;
+}
+
+.hidden {
+  display: none;
+}
+
+[data-chat-target="box"] {
+  position: relative;
+}
+
+.font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
