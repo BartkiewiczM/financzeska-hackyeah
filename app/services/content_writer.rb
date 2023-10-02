@@ -1,5 +1,5 @@
 class ContentWriter
-  MODEL = 'gpt-4'
+  MODEL = 'gpt-3.5-turbo'
 
   def self.write_draft_post(title, chat_history = [], database_response = nil)
     client = OpenAI::Client.new

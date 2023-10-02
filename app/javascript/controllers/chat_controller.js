@@ -24,10 +24,10 @@ export default class extends Controller {
     const useInstitutionsDatabase = this.institutionsDatabaseCheckboxTarget.checked;
     const useSmogDatabase = this.smogDatabaseCheckboxTarget.checked;
 
-    this.boxTarget.innerHTML += `<div class="text-right"><span class="inline-block px-4 py-2 rounded-lg bg-blue-500 text-white">${userMessageContent}</span></div>`;
+    this.boxTarget.innerHTML += `<div class="text-right"><span class="inline-block px-4 py-2 rounded-lg shadow-md bg-indigo-600 text-white">${userMessageContent}</span></div>`;
     this.scrollToBottom();
 
-    const typingIndicator = `<div class="text-left typing-indicator"><span class="inline-block px-4 py-2 rounded-lg bg-gray-300">...</span></div>`;
+    const typingIndicator = `<div class="text-left typing-indicator"><span class="inline-block px-4 py-2 rounded-lg bg-gray-100">...</span></div>`;
     this.boxTarget.innerHTML += typingIndicator;
     this.scrollToBottom();
     this.inputTarget.value = "";
@@ -48,7 +48,7 @@ export default class extends Controller {
     .then(data => {
       const lastChild = this.boxTarget.lastElementChild;
       if (lastChild && lastChild.classList.contains('typing-indicator')) {
-        lastChild.innerHTML = `<span class="inline-block px-4 py-2 rounded-lg bg-gray-300">${data.response}</span>`;
+        lastChild.innerHTML = `<span class="inline-block px-4 py-2 rounded-lg shadow-md bg-gray-100 text-gray-800">${data.response}</span>`;
         lastChild.classList.remove('typing-indicator');
       }
 
