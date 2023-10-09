@@ -21,9 +21,6 @@ export default class extends Controller {
 
     const userMessageContent = this.inputTarget.value;
 
-    const useInstitutionsDatabase = this.institutionsDatabaseCheckboxTarget.checked;
-    const useSmogDatabase = this.smogDatabaseCheckboxTarget.checked;
-
     this.boxTarget.innerHTML += `<div class="text-right"><span class="inline-block px-4 py-2 rounded-lg shadow-md bg-indigo-600 text-white">${userMessageContent}</span></div>`;
     this.scrollToBottom();
 
@@ -40,8 +37,6 @@ export default class extends Controller {
       },
       body: JSON.stringify({
         content: userMessageContent,
-        useInstitutionsDatabase: useInstitutionsDatabase,
-        useSmogDatabase: useSmogDatabase
       })
     })
     .then(response => response.json())

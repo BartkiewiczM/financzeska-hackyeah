@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_30_133621) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_06_150317) do
   create_table "datasets", charset: "utf8mb3", force: :cascade do |t|
     t.bigint "institution_id", null: false
     t.string "slug"
@@ -28,6 +28,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_30_133621) do
     t.datetime "updated_at", null: false
     t.string "dataset_id"
     t.index ["institution_id"], name: "index_datasets_on_institution_id"
+  end
+
+  create_table "faqs", charset: "utf8mb3", force: :cascade do |t|
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "weaviate_id"
+    t.index ["weaviate_id"], name: "index_faqs_on_weaviate_id", unique: true
   end
 
   create_table "institutions", charset: "utf8mb3", force: :cascade do |t|

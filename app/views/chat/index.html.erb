@@ -10,18 +10,11 @@
       <% end %>
     </div>
     <div class="border-t pt-4 flex items-center">
-      <div class="flex flex-col mr-4 space-y-2">
-        <label class="flex items-center">
-          <input type="checkbox" data-chat-target="institutionsDatabaseCheckbox" value="true" class="mr-2">
-          Użyj bazy instytucji
-        </label>
-        <label class="flex items-center">
-          <input type="checkbox" data-chat-target="smogDatabaseCheckbox" value="true" class="mr-2">
-          Użyj bazy pogodowej/jakości powietrza
-        </label>
-      </div>
       <input data-chat-target="input" data-action="keydown->chat#checkForEnter" type="text" class="flex-grow p-2 rounded-lg shadow-md bg-gray-100 mr-2" placeholder="Type a message...">
       <button data-action="click->chat#sendMessage" class="bg-blue-500 text-white px-4 py-2 rounded-lg">Send</button>
     </div>
+  </div>
+  <div class="absolute top-4 left-4">
+    <%= link_to 'Go to FAQs', faqs_path, class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' %>
   </div>
 </div>

@@ -3,11 +3,18 @@ class ContentWriter
 
   def self.write_draft_post(title, chat_history = [], database_response = nil)
     client = OpenAI::Client.new
+    base_prompt = "This was the message from chatbot user. Your response will be a response according to chat's history.
+    You are a chatbot that provides info about Lunar Logic company.
+    In this message the backend of the app also will give you some data from a vector database with info about the company, so after this you'll get
+    content from the database and you'll have to use it in your response if it fits.
+    Procide only information about the question asked. Please make the responses short and keep the conversation going.
+    Please don't provide any info that you are not sure about.
+    Here is the info from the database: #{database_response}"
 
     messages = [
       {
         role: "user",
-        content: "Uzyj prosze tych danych z mojej bazy danej, jeśli pasują do pytania, ale sformatuj je ładnie, nie musisz uyć wszystkich danych: #{database_response}"
+        content: " #{database_response}"
       }
     ]
     pp "database_response " + database_response.to_s
@@ -19,7 +26,7 @@ class ContentWriter
       }
     end
 
-    messages << { role: "user", content: title + "Uzyj prosze tych danych na poczatku odpowiedzi chatu #{database_response}" }
+    messages << { role: "user", content: title + base_prompt }
 
     response = client.chat(
       parameters: {
